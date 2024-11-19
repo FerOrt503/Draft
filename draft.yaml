@@ -1,0 +1,26 @@
+models:
+  # ...
+  Brand:
+    name: string
+    slug: string unique
+    relationships:
+      hasMany: Product
+
+  Category:
+    name: string
+    slug: string unique
+    relationships:
+      hasMany: Product
+
+  Product:
+    name: string
+    description: string
+    price: decimal
+    slug: string unique
+    sku: string
+    category_id: id
+    user_id: id
+    brand_id: id
+
+controllers:
+  # ...

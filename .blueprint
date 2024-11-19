@@ -1,0 +1,15 @@
+created:
+    - database/factories/BrandFactory.php
+    - database/factories/CategoryFactory.php
+    - database/factories/ProductFactory.php
+    - database/migrations/2024_11_19_184910_create_brands_table.php
+    - database/migrations/2024_11_19_184911_create_categories_table.php
+    - database/migrations/2024_11_19_184912_create_products_table.php
+    - app/Models/Brand.php
+    - app/Models/Category.php
+    - app/Models/Product.php
+models:
+    User: { name: string, email: string, email_verified_at: 'datetime nullable', password: string, remember_token: 'string nullable' }
+    Brand: { name: string, slug: 'string unique', relationships: { hasMany: Product } }
+    Category: { name: string, slug: 'string unique', relationships: { hasMany: Product } }
+    Product: { name: string, description: string, price: decimal, slug: 'string unique', sku: string, category_id: id, user_id: id, brand_id: id }
